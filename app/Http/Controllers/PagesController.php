@@ -10,6 +10,10 @@ class PagesController extends Controller
 {
     //
 
+    public function __construct(){
+        $this->middleware('cors');
+    }
+
     public function add_talk(Request $request){
         $is_valid = Talk::is_valid();
         $response = array(
