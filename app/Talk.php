@@ -9,14 +9,15 @@ class Talk extends Model
 {
     //
     protected $table = 'talks';
-    protected $fillable  = ['talk_title','speaker_name','allocated_time','location','attendees_id'];
+    protected $fillable  = ['talk_title','speaker_name','allocated_time','location','attendees_id','talk_date'];
 
     public static function is_valid(){
         $validator = Validator::make(Request::all(),[
             'talk_title' => 'required',
             'speaker_name' => 'required',
             'allocated_time' => 'required|numeric',
-            'location' => 'required' 
+            'location' => 'required',
+            'talk_date' => 'required'
         ]);
         if($validator->fails()){
             return false;

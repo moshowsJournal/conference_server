@@ -20,3 +20,5 @@ Route::post('/add_talk','PagesController@add_talk');
 Route::get('/get_talks','PagesController@get_talks');
 Route::post('/create_attendees','PagesController@create_attendees');
 Route::get('/get_attendees','PagesController@get_attendees');
+Route::get('/get_attendees/{talk_id}','PagesController@get_attendees');
+Route::post('/add_to_talk','PagesController@add_to_talk');
